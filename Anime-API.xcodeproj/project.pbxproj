@@ -17,6 +17,8 @@
 		2A66C57F2E03CF02000A3448 /* Anime_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C57E2E03CF02000A3448 /* Anime_APITests.swift */; };
 		2A66C5892E03CF02000A3448 /* Anime_APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C5882E03CF02000A3448 /* Anime_APIUITests.swift */; };
 		2A66C58B2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C58A2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift */; };
+		2A66C5982E03D208000A3448 /* HomeAnimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C5972E03D208000A3448 /* HomeAnimeVC.swift */; };
+		2A66C59A2E03D281000A3448 /* AnimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C5992E03D281000A3448 /* AnimeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2A66C5842E03CF02000A3448 /* Anime-APIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anime-APIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A66C5882E03CF02000A3448 /* Anime_APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_APIUITests.swift; sourceTree = "<group>"; };
 		2A66C58A2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_APIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A66C5972E03D208000A3448 /* HomeAnimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnimeVC.swift; sourceTree = "<group>"; };
+		2A66C5992E03D281000A3448 /* AnimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				2A66C5662E03CEFE000A3448 /* SceneDelegate.swift */,
 				2A66C5682E03CEFE000A3448 /* ViewController.swift */,
 				2A66C56A2E03CEFE000A3448 /* Main.storyboard */,
+				2A66C5992E03D281000A3448 /* AnimeTableViewCell.swift */,
+				2A66C5972E03D208000A3448 /* HomeAnimeVC.swift */,
 				2A66C5702E03CF01000A3448 /* Assets.xcassets */,
 				2A66C5722E03CF01000A3448 /* LaunchScreen.storyboard */,
 				2A66C5752E03CF01000A3448 /* Info.plist */,
@@ -263,7 +269,9 @@
 			files = (
 				2A66C5692E03CEFE000A3448 /* ViewController.swift in Sources */,
 				2A66C56F2E03CEFE000A3448 /* Anime_API.xcdatamodeld in Sources */,
+				2A66C59A2E03D281000A3448 /* AnimeTableViewCell.swift in Sources */,
 				2A66C5652E03CEFE000A3448 /* AppDelegate.swift in Sources */,
+				2A66C5982E03D208000A3448 /* HomeAnimeVC.swift in Sources */,
 				2A66C5672E03CEFE000A3448 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
