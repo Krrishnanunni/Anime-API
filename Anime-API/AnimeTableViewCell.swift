@@ -9,6 +9,8 @@ import UIKit
 
 class AnimeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var AnimeTvRating: UILabel!
+    @IBOutlet weak var animeStatus: UILabel!
     @IBOutlet weak var titleEng: UILabel!
     @IBOutlet weak var animeCoverimage: UIImageView!
     override func awakeFromNib() {

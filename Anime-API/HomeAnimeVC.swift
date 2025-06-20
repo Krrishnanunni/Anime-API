@@ -9,27 +9,51 @@ import UIKit
 
 class HomeAnimeVC: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print("inside numberOfRow-------->",animeDict.count)
+        return animeDict.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AnimeTableViewCell
+        
         cell.titleEng.text = "CowBoy beepop"
         cell.animeCoverimage.image = UIImage(named: "cowboy")
+//
+        let dict = self.animeDict[indexPath.row] as! NSDictionary
+        let images = dict["images"] as! NSDictionary
+        let jpg = images["jpg"] as! NSDictionary
+        let titleEng = dict["title_english"] as? String
+        let animeStatus = dict["status"] as? String
+        let TvRatin = dict["rating"] as? String
+        
+        cell.titleEng.text = titleEng
+        cell.animeStatus.text = animeStatus
+        cell.animeCoverimage.layer.cornerRadius = 10
+        cell.AnimeTvRating.text = TvRatin
+
+//        let coverImageUrl = jpg["large_image_url"] as! NSDictionary
+        let urlstring = String(describing: jpg["large_image_url"]!)
+        let urlimg = URL(string: urlstring)
+        let dataimg = try? Data(contentsOf: urlimg!)
+        cell.animeCoverimage.image = UIImage(data: dataimg!)
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 180
     }
 
 
  
     @IBOutlet weak var myTbaleView: UITableView!
     var jsondata = NSDictionary()
+    var actualData = NSDictionary()
     var animeDict = NSArray()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Animes"
+        
         
         
         let urlstring = URL(string: "https://api.jikan.moe/v4/anime?type=movie")
@@ -47,7 +71,13 @@ class HomeAnimeVC: UIViewController ,UITableViewDelegate , UITableViewDataSource
                             self.myTbaleView.reloadData()
                             
                             self.animeDict = self.jsondata["data"] as! NSArray
-                            print("Data-------------->",self.animeDict)
+
+                            print("Data-------------->",self.jsondata.count)
+                            print("animeDict",self.animeDict.count)
+                            self.myTbaleView.reloadData()
+                            
+                            
+                            
                             
                             
                         }
@@ -62,6 +92,41 @@ class HomeAnimeVC: UIViewController ,UITableViewDelegate , UITableViewDataSource
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let DetailedVC = sb.instantiateViewController(withIdentifier: "animeDetailedVC") as! animeDetailedVC
+        
+        let dict        = self.animeDict[indexPath.row] as! NSDictionary
+        let score       = dict["score"] as! Double
+        let airedDict     = dict["aired"] as? NSDictionary
+        let airedOn = airedDict!["string"] as? String
+        
+        let duration    = dict["duration"] as? String
+        let synopsis    = dict["synopsis"] as? String
+        let title       = dict["title_english"] as? String
+        let airStatus   = dict["status"] as? String
+        
+        let images      = dict["images"] as! NSDictionary
+        let jpg         = images["jpg"] as! NSDictionary
+        
+        let urlstring = String(describing: jpg["large_image_url"]!)
+
+        
+        DetailedVC.airedOnString            = airedOn!
+        DetailedVC.scoreInPointString       = String(score)
+        DetailedVC.synopsisString           = synopsis!
+        DetailedVC.airingStatusString       = airStatus!
+        DetailedVC.durationInMinString      = duration!
+        DetailedVC.titleString              = title!
+        
+        DetailedVC.coverImageString         = urlstring
+        
+        navigationController?.pushViewController(DetailedVC, animated: true)
+        
+        
+        
     }
     
 

@@ -19,6 +19,7 @@
 		2A66C58B2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C58A2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift */; };
 		2A66C5982E03D208000A3448 /* HomeAnimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C5972E03D208000A3448 /* HomeAnimeVC.swift */; };
 		2A66C59A2E03D281000A3448 /* AnimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66C5992E03D281000A3448 /* AnimeTableViewCell.swift */; };
+		8623141B2E04696B00F3F0B9 /* animeDetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623141A2E04696B00F3F0B9 /* animeDetailedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2A66C58A2E03CF02000A3448 /* Anime_APIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_APIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A66C5972E03D208000A3448 /* HomeAnimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnimeVC.swift; sourceTree = "<group>"; };
 		2A66C5992E03D281000A3448 /* AnimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTableViewCell.swift; sourceTree = "<group>"; };
+		8623141A2E04696B00F3F0B9 /* animeDetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animeDetailedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2A66C5642E03CEFE000A3448 /* AppDelegate.swift */,
+				8623141A2E04696B00F3F0B9 /* animeDetailedVC.swift */,
 				2A66C5662E03CEFE000A3448 /* SceneDelegate.swift */,
 				2A66C5682E03CEFE000A3448 /* ViewController.swift */,
 				2A66C56A2E03CEFE000A3448 /* Main.storyboard */,
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8623141B2E04696B00F3F0B9 /* animeDetailedVC.swift in Sources */,
 				2A66C5692E03CEFE000A3448 /* ViewController.swift in Sources */,
 				2A66C56F2E03CEFE000A3448 /* Anime_API.xcdatamodeld in Sources */,
 				2A66C59A2E03D281000A3448 /* AnimeTableViewCell.swift in Sources */,
